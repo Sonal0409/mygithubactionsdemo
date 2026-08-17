@@ -1,0 +1,25 @@
+name: My first workflow 
+on: 
+ push:
+   branches:
+    - 'main' 
+    - 'dev'
+    - 'test'
+jobs:
+  job1:
+    runs-on: ubuntu-22.04
+    steps:
+    - name:  update apt repository
+      run: apt update
+    - name: Install php package
+      run: apt install php -y
+    - name: Check version
+      run: php --version
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install python
+      uses: actions/setup-python@v7
+      with:
+        python-version: '3.13'
