@@ -1,0 +1,14 @@
+name: Install multiple versions of nodejs on multiple runners
+on: push
+jobs:
+  install-node:
+   strategy:
+     matrix:
+      node-version: [12,16,18,24]
+      operating-system: [ubuntu-latest, windows-latest]
+   runs-on: ${{ matrix.operating-system }}
+   steps:
+    - name: Install nodejs
+      uses: actions/setup-node@v7
+      with:
+       node-version: ${{ matrix.node-version }}
