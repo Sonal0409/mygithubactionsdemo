@@ -1,12 +1,17 @@
 name: Install multiple versions of nodejs on multiple runners
 on: push
 jobs:
-  install-node:
+ install-node:
    continue-on-error: true
    strategy:
      matrix:
       node-version: [27,16,18,24]
       operating-system: [ubuntu-latest, windows-latest]
+      exclude:
+        - node-version: 27
+          operating-system: ubuntu-latest
+        - node-version: 27
+          operating-system: windows-latest
    runs-on: ${{ matrix.operating-system }}
    steps:
     - name: Install nodejs
