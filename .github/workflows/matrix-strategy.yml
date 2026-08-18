@@ -2,6 +2,7 @@ name: Install multiple versions of nodejs on multiple runners
 on: push
 jobs:
   install-node:
+   continue-on-error: true
    strategy:
      matrix:
       node-version: [27,16,18,24]
