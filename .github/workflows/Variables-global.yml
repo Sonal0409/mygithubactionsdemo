@@ -1,0 +1,19 @@
+name: Install nodejs 
+on: push
+env:
+  nodeversion: 24
+jobs:
+  install-node:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Install nodejs
+      uses: actions/setup-node@v7
+      with:
+       node-version: ${{ env.nodeversion }}
+  install-node-windows:
+   runs-on: windows-latest
+   steps:
+   - name: Install nodejs on Windows
+     uses: actions/setup-node@v7
+     with:
+      node-version: ${{ env.nodeversion }}
