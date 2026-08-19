@@ -1,0 +1,30 @@
+name: Install nodejs and python3
+on: push
+jobs:
+  install-node:
+   runs-on: ubuntu-latest
+   env:
+     nodeversion: 24
+   steps:
+    - name: Install nodejs
+      uses: actions/setup-node@v7
+      with:
+       node-version: ${{ env.nodeversion }}
+  install-node-windows:
+   runs-on: windows-latest
+   env:
+    nodeVersion-win: 24
+   steps:
+    - name: Install nodejs on Windows
+      uses: actions/setup-node@v7
+      with:
+        node-version: ${{ env.nodeVersion-win }}
+  install-python:
+   runs-on: ubuntu-latest
+   env:
+    pythonVersion: 12
+   steps:
+    - name: Install python 
+      uses: actions/setup-python@v5
+      with:
+       python-version: ${{ env.pythonVersion }}
