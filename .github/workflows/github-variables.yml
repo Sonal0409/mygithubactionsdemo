@@ -1,7 +1,7 @@
-name: Install nodejs and python3
+name: github variables
 on: push
 jobs:
-  install-python:
+  print:
    runs-on: ubuntu-latest
    steps:
     - name: Run github action variable
