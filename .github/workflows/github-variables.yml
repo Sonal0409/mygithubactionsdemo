@@ -1,0 +1,11 @@
+name: Install nodejs and python3
+on: push
+jobs:
+  install-python:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Run github action variable
+      run: echo "Print the run number $GITHUB_RUN_NUMBER "
+    - name: Print the Image name
+      run: echo "My image name is myiamge01:$GITHUB_RUN_NUMBER "
+   
