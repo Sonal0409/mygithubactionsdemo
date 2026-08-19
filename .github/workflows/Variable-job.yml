@@ -22,9 +22,9 @@ jobs:
   install-python:
    runs-on: ubuntu-latest
    env:
-    pythonVersion: 12
+    pythonVersion: 3.13
    steps:
     - name: Install python 
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v7
       with:
        python-version: ${{ env.pythonVersion }}
