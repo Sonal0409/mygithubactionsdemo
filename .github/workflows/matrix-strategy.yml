@@ -1,5 +1,5 @@
 name: Install multiple versions of nodejs on multiple runners
-on: push
+on: workflow_dispatch
 jobs:
  install-node:
    continue-on-error: true
